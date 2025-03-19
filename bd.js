@@ -31,11 +31,18 @@ bd.serialize(function () {
 
 
   // READ 
-  bd.all("SELECT * FROM project", function(err, rows) {
-    if (err) throw console.error(err)
-    console.log(rows);
-  })
+//   bd.all("SELECT * FROM project", function(err, rows) {
+//     if (err) throw console.error(err)
+//     console.log(rows);
+//   })
 
   
   // KILL
+//   bd.run("DELETE FROM project WHERE id=?", [2], function(err, rows) {
+//     if (err) throw console.error(err)
+//     console.log(this + " foi deletado");
+//   })
+
 });
+
+module.exports = bd

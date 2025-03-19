@@ -1,5 +1,6 @@
 const express = require("express")
 const nunjucks = require("nunjucks")
+const bd = require("./bd.js")
 const app = express()
 
 nunjucks.configure("views", {
@@ -77,11 +78,17 @@ const projects = [
 app.use(express.static("public"))
 
 app.get("/", (req, res) => {
-  return res.render("index.html", { projects: projects.splice(projects.length - 3, projects.length) })
+  bd.all("SELECT * FROM project", function(err, projects) {
+    if (err) throw console.error(err)
+    return res.render("index.html", { projects: projects.splice(projects.length - 3, projects.length) })
+  })
 })
 
 app.get("/projects", (req, res) => {
-  return res.render("projects.html", { projects:projects })
+  bd.all("SELECT * FROM project", function(err, projects) {
+    if (err) throw console.error(err)
+    return res.render("projects.html", { projects: projects })
+  })
 })
 
 app.listen(3000, () => {
