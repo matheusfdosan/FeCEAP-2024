@@ -81,7 +81,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/projects", (req, res) => {
-  return res.render("projects.html", { projects })
+  return res.render("projects.html", { projects:projects })
 })
 
 app.listen(3000, () => {

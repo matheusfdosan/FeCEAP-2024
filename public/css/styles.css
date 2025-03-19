@@ -26,6 +26,7 @@ body {
   /* background: linear-gradient(153deg, rgba(107,72,255,1) 0%, rgba(255,138,92,1) 35%, rgba(85,209,159,1) 100%); */
   color: #25282b;
 
+  overflow-x: hidden;
   font-family: "Montserrat", sans-serif;
 }
 

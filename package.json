@@ -1,7 +1,9 @@
 {
   "dependencies": {
     "express": "^4.21.2",
-    "nunjucks": "^3.2.4"
+    "nunjucks": "^3.2.4",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
   },
   "scripts": {
     "start": "nodemon server.js"
